@@ -71,8 +71,12 @@ def Calculadora():
         divisao_lambda = lambda numero1, numero2: numero1 / numero2
         numero1 = float(input("Escolha o primeiro número que deseja operar: "))
         numero2 = float(input("Escolha o segundo número que deseja operar: "))
-        print("O resultado da sua operação é:" "\n" + str(divisao_lambda(numero1, numero2)))
-        reiniciar()
+            if numero2 == 0:
+                print("Impossível dividir por zero")
+                Calculadora()
+            else:
+                print("O resultado da sua operação é:" "\n" + str(divisao_lambda(numero1, numero2)))
+                reiniciar()
         
     #opção inválida
     else:
